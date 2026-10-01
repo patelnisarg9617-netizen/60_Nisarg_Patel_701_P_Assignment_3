@@ -1,13 +1,5 @@
 # Q7 - MERN Shopping Cart
-Admin site + User site with 2-level Categories and Products.
 
-Features:
-- Admin login
-- Add/list/delete main categories and subcategories
-- Add/list/delete products
-- User registration/login
-- Product listing and category/subcategory filter
-- Shopping cart with quantity +/-, remove and total
 
 Demo Admin:
 Email: admin@gmail.com
