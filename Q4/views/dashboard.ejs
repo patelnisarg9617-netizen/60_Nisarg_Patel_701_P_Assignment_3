@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ERP Dashboard</title>
+
+    <link rel="stylesheet"
+          href="/css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>ERP Admin Panel</h2>
+
+    <div>
+        <a href="/dashboard">
+            Dashboard
+        </a>
+
+        <a href="/employees">
+            Employees
+        </a>
+
+        <a href="/logout">
+            Logout
+        </a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Dashboard</h1>
+
+    <p>
+        Welcome,
+        <strong>
+            <%= admin.email %>
+        </strong>
+    </p>
+
+    <a class="button"
+       href="/employees">
+        Manage Employees
+    </a>
+
+</div>
+
+</body>
+</html>

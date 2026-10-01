@@ -1,0 +1,51 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: white;
+  color: black;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 8px;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 8px 15px;
+  margin: 5px 5px 5px 0;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+}
+
+p {
+  line-height: 1.6;
+}

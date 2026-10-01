@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Registration Details</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+            width: 25%;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+            margin: 5px;
+        }
+
+        .download {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 7px 10px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .download:hover {
+            background: #218838;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h1>Registration Successful</h1>
+
+
+    <table>
+
+        <tr>
+
+            <th>Username</th>
+
+            <td>
+                <%= user.username %>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <th>Email</th>
+
+            <td>
+                <%= user.email %>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <th>Gender</th>
+
+            <td>
+                <%= user.gender %>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <th>Hobbies</th>
+
+            <td>
+
+                <% user.hobbies.forEach(function(hobby, index) { %>
+
+                    <%= hobby %>
+
+                    <% if (index < user.hobbies.length - 1) { %>
+                        ,
+                    <% } %>
+
+                <% }); %>
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <th>Profile Picture</th>
+
+            <td>
+
+                <% if (user.profilePic) { %>
+
+                    <img
+                        src="/uploads/profile/<%= user.profilePic.filename %>"
+                        alt="Profile Picture"
+                    >
+
+                    <br>
+
+                    <a
+                        class="download"
+                        href="/download/profile/<%= user.profilePic.filename %>"
+                    >
+                        Download Profile Picture
+                    </a>
+
+                <% } %>
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <th>Other Pictures</th>
+
+            <td>
+
+                <% if (user.otherPics.length > 0) { %>
+
+                    <% user.otherPics.forEach(function(file) { %>
+
+                        <div style="display:inline-block; text-align:center;">
+
+                            <img
+                                src="/uploads/others/<%= file.filename %>"
+                                alt="Other Picture"
+                            >
+
+                            <br>
+
+                            <a
+                                class="download"
+                                href="/download/other/<%= file.filename %>"
+                            >
+                                Download
+                            </a>
+
+                        </div>
+
+                    <% }); %>
+
+                <% } else { %>
+
+                    No other pictures uploaded.
+
+                <% } %>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <a
+        href="/"
+        class="back"
+    >
+        Register Another User
+    </a>
+
+</div>
+
+</body>
+
+</html>
